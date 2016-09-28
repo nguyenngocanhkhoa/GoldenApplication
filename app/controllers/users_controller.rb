@@ -9,9 +9,10 @@ class UsersController < ApplicationController
       @users = User.paginate(page: params[:page])
   end
 
-  # GET /users/1
+  # GET /users/1  
   # GET /users/1.json
   def show
+     @items = @user.items.paginate(page: params[:page])
   end
 
   # GET /users/new
